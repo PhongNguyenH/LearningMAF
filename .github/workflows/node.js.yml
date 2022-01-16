@@ -23,5 +23,7 @@ jobs:
     - run: npm install
     - run: npm run build --if-present
     - name: Run automation test scrips
-      shell: bash      
+      shell: bash    
+      run: pwd
+      run: ls
       run: bash ./runFeature.sh
