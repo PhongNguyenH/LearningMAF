@@ -21,12 +21,12 @@ jobs:
       with:
         node-version: 12.x
     - run: npm ci    
-    - name: Make Report folder
-      run: mkdir -p ./test/report
+#    - name: Make Report folder
+#      run: mkdir -p ./test/report
     - name: Run automation test scrips      
       run: bash ./runFeature.sh
-    - name: Generate Report
-      run: node node_modules/@ln-maf/core/multiReport.js
+#    - name: Generate Report
+#      run: node node_modules/@ln-maf/core/multiReport.js
     - name: Upload Report Folder
       uses: actions/upload-artifact@v2
       with:
