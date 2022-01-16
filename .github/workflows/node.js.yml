@@ -28,5 +28,6 @@ jobs:
     - name: Upload Report Folder
       uses: actions/upload-artifact@v2
       with:
-          path: ./test/report/
-          retention-days: 1
+        name: cucumber-test-report
+        path: /test/report
+        retention-days: 7
