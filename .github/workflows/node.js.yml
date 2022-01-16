@@ -31,5 +31,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: cucumber-test-report
-        path: /test/report
+        path: /test
         retention-days: 7
