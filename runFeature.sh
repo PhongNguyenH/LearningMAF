@@ -1,7 +1,9 @@
-mkdir -p ./test/report
-node node_modules/@cucumber/cucumber/bin/cucumber-js -f json:test/report/report.json ./features/MyLearning.feature
-#start chrome.exe %cd%/test/report/index.html
-result=$?
-echo "result = $result"
-node node_modules/@ln-maf/core/multiReport.js
-exit $result
+#!/bin/sh
+mkdir -p test/report
+npx preprocessor
+
+npx cucumber-js -f json:test/report/cucumber_report.json --require "features/**/*.js" tmp/features/$*; 
+val=$?
+npx multiReport
+openPy $PWD/test/report/undefined/index.html
+exit $val
