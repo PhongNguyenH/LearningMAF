@@ -23,10 +23,8 @@ jobs:
     - run: npm ci    
     - name: Run automation test scrips      
       run: bash ./runFeature.sh
-    - name: Export multi reports
-      run: node node_modules/@ln-maf/core/multiReport.js
     - name: Upload Report Folder
       uses: actions/upload-artifact@v2
       with:
-          path: ./test
+          path: ./test/report/
           retention-days: 1
