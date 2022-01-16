@@ -22,6 +22,8 @@ jobs:
         node-version: 12.x
     - run: npm install
     - run: npm run build --if-present
+    - name: Create report folder
+      run: mkdir -p ./test/report
     - name: List all files
       run: ls
     - name: Run automation test scrips      
