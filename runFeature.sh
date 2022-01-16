@@ -1,4 +1,4 @@
-mkdir -p ./test/report
+#mkdir -p ./test/report
 node node_modules/@cucumber/cucumber/bin/cucumber-js -f json:test/report/report.json ./features/MyLearning.feature
 #start chrome.exe %cd%/test/report/index.html
 result=$?
