@@ -20,12 +20,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 12.x
-    - run: npm ci
-    - run: npm run build --if-present
-    - name: Create report folder
-      run: mkdir -p ./test/report
-    - name: List all files
-      run: ls
+    - run: npm ci    
     - name: Run automation test scrips      
       run: bash ./runFeature.sh
     - name: Export multi reports
@@ -33,5 +28,5 @@ jobs:
     - name: Upload Report Folder
       uses: actions/upload-artifact@v2
       with:
-          path: src/test/
+          path: ./test
           retention-days: 1
