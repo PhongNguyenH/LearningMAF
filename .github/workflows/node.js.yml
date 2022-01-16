@@ -24,4 +24,4 @@ jobs:
     - run: npm run build --if-present
     - name: Run automation test scrips
       shell: bash
-      run: sh "bash ./runFeature.sh"
+      run: sh ./runFeature.sh
