@@ -28,3 +28,5 @@ jobs:
       run: ls
     - name: Run automation test scrips      
       run: bash ./runFeature.sh
+    - name: Export multi reports
+      run: node node_modules/@ln-maf/core/multiReport.js
