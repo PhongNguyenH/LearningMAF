@@ -22,4 +22,6 @@ jobs:
         node-version: 12.x
     - run: npm install
     - run: npm run build --if-present
-    - run: bash runFeature.sh
+    - name: Run automation test scrips
+      shell: bash
+      run: runFeature.sh
