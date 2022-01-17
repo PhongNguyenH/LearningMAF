@@ -20,6 +20,9 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 12.x
+    - run: |
+        cd features
+        pwd
     - run: npm ci    
     - name: Make Report folder
       run: mkdir -p ./test/report
