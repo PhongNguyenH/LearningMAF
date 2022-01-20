@@ -2,13 +2,15 @@ name: Manual trigger CI Automation
 
 on:
   workflow_dispatch:
-    #inputs:
-    #  logLevel:
-    #    description: 'Log level'     
-    #    required: true
-    #    default: 'warning'
-    #  tags:
-    #    description: 'Test scenario tags'
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+    secrets:
+        MY_SECRET_NAME:
+          description: 'What is my secret name?'
+          required: true
 
 jobs:
   build:
@@ -29,6 +31,7 @@ jobs:
       run: mkdir -p ./test/report
     - name: Run automation test scrips      
       run: bash ./runFeature.sh
+    - run: echo "Hello:" ${{ MY_SECRET_NAME }}
     - name: Generate Report
       run: node node_modules/@ln-maf/core/multiReport.js
     - name: Upload Report Folder
